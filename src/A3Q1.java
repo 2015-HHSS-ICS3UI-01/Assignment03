@@ -23,7 +23,23 @@ public class A3Q1 {
         // TODO code application logic here
         City kw = new City();
         Robot karel = new Robot(kw,1,1, Direction.EAST);
+        Robot steve = new Robot(kw,3,1, Direction.EAST);
         new Wall(kw,1,5, Direction.WEST);
         new Thing(kw,1,3);
+        new Thing(kw,1,4);
+        new Wall(kw,3,4, Direction.EAST);
+        new Thing(kw,3,5);
+        while(true){
+            if(!karel.canPickThing()){
+                karel.move();
+                
+            }else if(steve.frontIsClear()){
+                steve.move();
+            }
+        }
+            
+        
+        
+        }
     }
-}
+
