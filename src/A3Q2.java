@@ -25,7 +25,7 @@ public class A3Q2 {
         //make robot
         Robot jarvis = new Robot(town,1,1,Direction.EAST);
         //build walls
-        int boxSize = 5;
+        int boxSize = 8;
         for(int inc=0;inc!=boxSize;inc++){
             new Wall(town,1,inc+1,Direction.NORTH);
             new Wall(town,boxSize,inc+1,Direction.SOUTH);
@@ -60,8 +60,26 @@ public class A3Q2 {
                     eastFace = false;
                 }
             }else{
-                
+                jarvis.turnLeft();
+                if(!jarvis.frontIsClear()){
+                    boxEnd = true;
+                }else{
+                    jarvis.move();
+                    jarvis.turnLeft();
+                    eastFace = true;
+                }
             }
         }
+        while(jarvis.getAvenue() != 1 ||
+                jarvis.getStreet() != 1){
+            while(!jarvis.frontIsClear()){
+                jarvis.turnLeft();
+            }
+            while(jarvis.frontIsClear()){
+                jarvis.move();
+            }
+        }
+        jarvis.turnLeft();
+        jarvis.turnLeft();
     }
 }
