@@ -44,7 +44,7 @@ public class A3Q2 {
             //move back and forth and pick stuff up
         while(!boxEnd){
             //pick stuff up
-            if(jarvis.canPickThing()){
+            while(jarvis.canPickThing()){
                 jarvis.pickThing();
             }
             //move back and forth
