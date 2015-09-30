@@ -25,7 +25,7 @@ public class A3Q2 {
         //make robot
         Robot jarvis = new Robot(town,1,1,Direction.EAST);
         //build walls
-        int boxSize = 8;
+        int boxSize = 1;
         for(int inc=0;inc!=boxSize;inc++){
             new Wall(town,1,inc+1,Direction.NORTH);
             new Wall(town,boxSize,inc+1,Direction.SOUTH);
@@ -39,18 +39,25 @@ public class A3Q2 {
             }
         }
         //move robot
+            //Vars
         boolean boxEnd = false, eastFace = true;
+            //move back and forth and pick stuff up
         while(!boxEnd){
+            //pick stuff up
             if(jarvis.canPickThing()){
                 jarvis.pickThing();
             }
+            //move back and forth
             if(jarvis.frontIsClear()){
+                //move
                 jarvis.move();
+            //how to turn if you face east
             }else if(eastFace){
                 jarvis.turnLeft();
                 jarvis.turnLeft();
                 jarvis.turnLeft();
                 if(!jarvis.frontIsClear()){
+                    //check if your done
                     boxEnd = true;
                 }else{
                     jarvis.move();
@@ -59,9 +66,11 @@ public class A3Q2 {
                     jarvis.turnLeft();
                     eastFace = false;
                 }
+            //how to turn if you face west
             }else{
                 jarvis.turnLeft();
                 if(!jarvis.frontIsClear()){
+                    //check if your done
                     boxEnd = true;
                 }else{
                     jarvis.move();
@@ -70,15 +79,19 @@ public class A3Q2 {
                 }
             }
         }
+        //get back to start
         while(jarvis.getAvenue() != 1 ||
                 jarvis.getStreet() != 1){
             while(!jarvis.frontIsClear()){
+                //turn if you hit a wall
                 jarvis.turnLeft();
             }
             while(jarvis.frontIsClear()){
+                //move if there is no wall
                 jarvis.move();
             }
         }
+        //face east
         jarvis.turnLeft();
         jarvis.turnLeft();
     }
