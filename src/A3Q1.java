@@ -32,7 +32,7 @@ public class A3Q1 {
         //while the front is clear karel moves forward
         while(karel.frontIsClear()){
             karel.move();
-            //if karelcan pick a Thing he stops
+            //if karel can pick a Thing he stops
         if (karel.canPickThing()){
             break;
         }
