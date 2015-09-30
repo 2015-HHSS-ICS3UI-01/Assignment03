@@ -39,9 +39,29 @@ public class A3Q2 {
             }
         }
         //move robot
-        boolean boxEnd = false;
+        boolean boxEnd = false, eastFace = true;
         while(!boxEnd){
-            
+            if(jarvis.canPickThing()){
+                jarvis.pickThing();
+            }
+            if(jarvis.frontIsClear()){
+                jarvis.move();
+            }else if(eastFace){
+                jarvis.turnLeft();
+                jarvis.turnLeft();
+                jarvis.turnLeft();
+                if(!jarvis.frontIsClear()){
+                    boxEnd = true;
+                }else{
+                    jarvis.move();
+                    jarvis.turnLeft();
+                    jarvis.turnLeft();
+                    jarvis.turnLeft();
+                    eastFace = false;
+                }
+            }else{
+                
+            }
         }
     }
 }
