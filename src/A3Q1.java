@@ -29,8 +29,10 @@ public class A3Q1 {
         //Make a Thing
         new Thing (kw,0,3);
         new Thing (kw,0,4);
+        //while the front is clear karel moves forward
         while(karel.frontIsClear()){
             karel.move();
+            //if karelcan pick a Thing he stops
         if (karel.canPickThing()){
             break;
         }
