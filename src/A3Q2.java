@@ -25,7 +25,7 @@ public class A3Q2 {
         //make robot
         Robot jarvis = new Robot(town,1,1,Direction.EAST);
         //build walls
-        int boxSize = 1;
+        int boxSize = 6;
         for(int inc=0;inc!=boxSize;inc++){
             new Wall(town,1,inc+1,Direction.NORTH);
             new Wall(town,boxSize,inc+1,Direction.SOUTH);
