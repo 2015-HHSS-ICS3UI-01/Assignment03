@@ -52,33 +52,52 @@ public class A3Q2 {
         Robot jimbo = new Robot (eep, 1, 1, Direction.EAST);
         
         //picking up litter
-        while (true){
-            if (jimbo.frontIsClear()){
-                while (jimbo.frontIsClear()){
-                    jimbo.move();
-                        if (jimbo.canPickThing()){
-                            jimbo.pickThing();
-                        }
-                                }
-                            }else if (!jimbo.frontIsClear()){
-                                for (int turns = 0; turns <3; turns = turns +1){
-                                    jimbo.turnLeft();
-                                }jimbo.move();
-                                    for (int turns = 0; turns <3; turns = turns +1){
-                                    jimbo.turnLeft();
+        for (int turns = 0; turns <3; turns = turns +1){
+            jimbo.turnLeft();  
+            
+        }while (jimbo.frontIsClear()){
+            jimbo.move();
+                if (jimbo.canPickThing()){
+                    jimbo.pickThing();
+                }
+                while (!jimbo.frontIsClear()){
+                    if (jimbo.getDirection()==Direction.NORTH){
+                        jimbo.turnLeft();
+                        jimbo.turnLeft();
+                        jimbo.turnLeft();
+                            if (jimbo.frontIsClear()){
+                                jimbo.move();
+                                jimbo.turnLeft();
+                                jimbo.turnLeft();
+                                jimbo.turnLeft();
+                            }                 
+                            if (jimbo.canPickThing()){
+                                jimbo.canPickThing();
                             }
-        }}}}
-           
-
-            
-           
-                    
                         
-                
-                
-            
-        
-          
-        
-    
-
+                    }else if (jimbo.getDirection()==Direction.SOUTH){
+                        jimbo.turnLeft();
+                        jimbo.move();
+                        jimbo.turnLeft();
+                            if (jimbo.canPickThing()){
+                                jimbo.pickThing();
+                }
+            }
+        }
+    }
+        //go back to (1, 1)
+                while (jimbo.getAvenue()!= 1){
+                        if (jimbo.getDirection() != Direction.WEST){ 
+                                    jimbo.turnLeft();
+                        }else if (jimbo.getDirection()==Direction.WEST){
+                                    jimbo.move();
+        }
+    }
+                while (jimbo.getStreet()!=1){
+                        if (jimbo.getDirection()!=Direction.NORTH){
+                                    jimbo.turnLeft();
+                        }else if (jimbo.getDirection()==Direction.NORTH)
+                                    jimbo.move();
+            }
+        }
+    }
