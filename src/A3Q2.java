@@ -72,7 +72,7 @@ public class A3Q2 {
                                 jimbo.turnLeft();
                             }                 
                             if (jimbo.canPickThing()){
-                                jimbo.canPickThing();
+                                jimbo.pickThing();
                             }
                         
                     }else if (jimbo.getDirection()==Direction.SOUTH){
@@ -82,11 +82,14 @@ public class A3Q2 {
                             if (jimbo.canPickThing()){
                                 jimbo.pickThing();
                 }
+            }else if (jimbo.getDirection()== Direction.EAST){
+                break;}
             }
         }
-    }
+    
         //go back to (1, 1)
-                while (jimbo.getAvenue()!= 1){
+        
+                    while (jimbo.getAvenue()!= 1){
                         if (jimbo.getDirection() != Direction.WEST){ 
                                     jimbo.turnLeft();
                         }else if (jimbo.getDirection()==Direction.WEST){
@@ -96,8 +99,14 @@ public class A3Q2 {
                 while (jimbo.getStreet()!=1){
                         if (jimbo.getDirection()!=Direction.NORTH){
                                     jimbo.turnLeft();
-                        }else if (jimbo.getDirection()==Direction.NORTH)
+                        }else if (jimbo.getDirection()==Direction.NORTH){
                                     jimbo.move();
-            }
+                    }
+                }  
+            while (jimbo.getDirection()!=Direction.EAST){
+                     jimbo.turnLeft();
         }
-    }
+    }                
+}           
+        
+    
