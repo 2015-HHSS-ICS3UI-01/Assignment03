@@ -54,32 +54,36 @@ public class A3Q2 {
                 karel.turnLeft();
                 karel.turnLeft();
             }
+            //Everytime he's finished an odd row he turns
             if (karel.getDirection() == Direction.SOUTH && (karel.frontIsClear())) {
                 karel.move();
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
+                //Everytime he reaches an even end of a row he heads to the next
 
-            }else if(karel.getDirection() == Direction.WEST && (!karel.frontIsClear())){
+            } else if (karel.getDirection() == Direction.WEST && (!karel.frontIsClear())) {
                 karel.turnLeft();
                 karel.move();
                 karel.turnLeft();
-            }else if(karel.getDirection() == Direction.SOUTH && (!karel.frontIsClear())){
+                //Once karel is done, he stops by facing south indicating completion.
+            } else if (karel.getDirection() == Direction.SOUTH && (!karel.frontIsClear())) {
                 karel.turnLeft();
                 karel.turnLeft();
                 break;
-                
-                }
+
             }
-            while(true){
-                    if(karel.getStreet() > 1){
+        }
+        // Karel safely going home
+        while (true) {
+            if (karel.getStreet() > 1) {
                 karel.move();
-                
-            }else if(!karel.frontIsClear()){
-                    
-                    karel.turnLeft();
-                    }else if(karel.getAvenue() > 1){
-                        karel.move();
+
+            } else if (!karel.frontIsClear()) {
+
+                karel.turnLeft();
+            } else if (karel.getAvenue() > 1) {
+                karel.move();
                         
                     }
 
