@@ -100,11 +100,11 @@ public class A3Q2 {
                 } 
             }
 
-          // If we are facing south, we have traveled the entire room
-        } while( karel.getDirection() != Direction.SOUTH  ); 
+        // If we are facing south, we have traveled the entire room
+        } while(karel.getDirection() != Direction.SOUTH); 
           
         // we have move through the entire room, time to return 
-        // to the home position (1,1).   Travel west until
+        // to the home position (1,1). Travel west until
         // hit a wall and then north to hit the wall.
         // We always finish moving through the city pointing 
         // south, so turn to point West and move until we hit a wall
