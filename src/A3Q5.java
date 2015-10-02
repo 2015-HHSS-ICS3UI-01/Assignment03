@@ -54,6 +54,7 @@ public class A3Q5 {
                 karel.move();
                 karel.move();
                 break;
+                //Note for last questionhave him turn left 3 times when he's (3,3) and while loop him around all blocks nomrally
             }
         }
         
