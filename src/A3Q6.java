@@ -8,7 +8,6 @@ import becker.robots.Wall;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author whitb0039
@@ -20,13 +19,16 @@ public class A3Q6 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+
+
+
+
         //make new city kw
         City kw = new City();
-        
+
         //make new robot karl
         RobotSE karl = new RobotSE(kw, 3, 3, Direction.SOUTH);
-        
+
         new Wall(kw, 1, 2, Direction.NORTH);
         new Wall(kw, 1, 2, Direction.EAST);
         new Wall(kw, 2, 2, Direction.EAST);
@@ -35,7 +37,7 @@ public class A3Q6 {
         new Wall(kw, 2, 1, Direction.WEST);
         new Wall(kw, 1, 1, Direction.WEST);
         new Wall(kw, 1, 1, Direction.NORTH);
-        
+
         new Wall(kw, 1, 5, Direction.NORTH);
         new Wall(kw, 1, 5, Direction.EAST);
         new Wall(kw, 2, 5, Direction.EAST);
@@ -44,7 +46,7 @@ public class A3Q6 {
         new Wall(kw, 2, 4, Direction.WEST);
         new Wall(kw, 1, 4, Direction.WEST);
         new Wall(kw, 1, 4, Direction.NORTH);
-        
+
         new Wall(kw, 4, 2, Direction.NORTH);
         new Wall(kw, 4, 2, Direction.EAST);
         new Wall(kw, 5, 2, Direction.EAST);
@@ -53,7 +55,7 @@ public class A3Q6 {
         new Wall(kw, 5, 1, Direction.WEST);
         new Wall(kw, 4, 1, Direction.WEST);
         new Wall(kw, 4, 1, Direction.NORTH);
-        
+
         new Wall(kw, 4, 5, Direction.NORTH);
         new Wall(kw, 4, 5, Direction.EAST);
         new Wall(kw, 5, 5, Direction.EAST);
@@ -62,7 +64,31 @@ public class A3Q6 {
         new Wall(kw, 5, 4, Direction.WEST);
         new Wall(kw, 4, 4, Direction.WEST);
         new Wall(kw, 4, 4, Direction.NORTH);
-        
-        
+
+        for (int loop = 0; loop < 4; loop++) {
+            for (int lap = 0; lap < 3; lap++) {
+                for (int moveForward = 0; moveForward < 3; moveForward++) {
+                    karl.move();
+                }
+                karl.turnLeft();
+                }
+            for (int pass = 0; pass < 3; pass++) {
+                    karl.move();
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
