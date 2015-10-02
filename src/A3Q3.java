@@ -66,6 +66,9 @@ public class A3Q3 {
                     }
                 }
             }
+            
+            // to shorten one while loop to get him to the walls 
+            // and then another to get him to check till there is a break
         }
     }
 }
