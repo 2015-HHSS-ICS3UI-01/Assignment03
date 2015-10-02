@@ -30,6 +30,7 @@ public class A3Q5 {
         new Wall (eep, 1, 1, Direction.EAST);
         new Wall (eep, 1, 1, Direction.EAST);
         new Wall (eep, 1, 1, Direction.EAST);
+        
         }
     }
 }
