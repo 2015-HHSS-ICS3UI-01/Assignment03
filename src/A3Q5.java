@@ -1,5 +1,7 @@
 
 import becker.robots.City;
+import becker.robots.Direction;
+import becker.robots.Wall;
 
 /*
  * To change this template, choose Tools | Templates
@@ -20,6 +22,14 @@ public class A3Q5 {
         City eep = new City();
         
         //boxes
-        new Wall (eep, 1, 1, Direction. )
+        new Wall (eep, 1, 1, Direction.EAST);
+        new Wall (eep, 1, 1, Direction.EAST);
+        new Wall (eep, 1, 1, Direction.EAST);
+        new Wall (eep, 1, 1, Direction.EAST);
+        new Wall (eep, 1, 1, Direction.EAST);
+        new Wall (eep, 1, 1, Direction.EAST);
+        new Wall (eep, 1, 1, Direction.EAST);
+        new Wall (eep, 1, 1, Direction.EAST);
+        }
     }
 }
