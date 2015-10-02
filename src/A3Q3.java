@@ -33,7 +33,7 @@ public class A3Q3 {
 
         new Wall(kw, 1, 6, Direction.EAST);
         new Wall(kw, 2, 6, Direction.EAST);
-        //exit at 3,6,east
+        new Wall(kw, 3, 6, Direction.EAST);
         new Wall(kw, 4, 6, Direction.EAST);
         new Wall(kw, 5, 6, Direction.EAST);
         new Wall(kw, 6, 6, Direction.EAST);
@@ -41,13 +41,13 @@ public class A3Q3 {
         new Wall(kw, 6, 6, Direction.SOUTH);
         new Wall(kw, 6, 5, Direction.SOUTH);
         new Wall(kw, 6, 4, Direction.SOUTH);
-        new Wall(kw, 6, 3, Direction.SOUTH);
+        //exit @ 6,3,south
         new Wall(kw, 6, 2, Direction.SOUTH);
         new Wall(kw, 6, 1, Direction.SOUTH);
 
         new Wall(kw, 6, 1, Direction.WEST);
         new Wall(kw, 5, 1, Direction.WEST);
-        new Wall (kw,4,1,Direction.WEST);
+        new Wall(kw, 4, 1, Direction.WEST);
         new Wall(kw, 3, 1, Direction.WEST);
         new Wall(kw, 2, 1, Direction.WEST);
         new Wall(kw, 1, 1, Direction.WEST);
@@ -65,7 +65,7 @@ public class A3Q3 {
                 houdini.turnLeft();
                 if (houdini.frontIsClear()) {
                     houdini.move();
-                    if(houdini.frontIsClear()){
+                    if (houdini.frontIsClear()) {
                         break;
                     }
 
