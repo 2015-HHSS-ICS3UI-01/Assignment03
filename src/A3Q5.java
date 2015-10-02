@@ -33,32 +33,30 @@ public class A3Q5 {
         new Thing(kw,1,1);
         new Thing(kw,1,1);
         new Thing(kw,1,1);
-        
-        for(int timesTurned = 0; timesTurned < 32; timesTurned = timesTurned + 1){
-            if(karel.getDirection() == Direction.EAST && (karel.canPickThing())){
-                karel.pickThing();
-                karel.move();
-                karel.move();
-                karel.putThing();
-                karel.turnLeft();
-                karel.turnLeft();
+        int Backpack =0;
+        //named variable Backpack = 0
+      while(Backpack < 10){
+          karel.pickThing();
+          karel.move();
+          karel.putThing();
+          Backpack++;
+          //once his backpack has 10, he breaks 
+          if(Backpack == 10){
+          break;    
+          }
+          
+          //and executes this
+          karel.turnLeft();
+          karel.turnLeft();
+          karel.move();
+          karel.turnLeft();
+          karel.turnLeft();
+      }
                 
-                
-            }else if(karel.getDirection() == Direction.WEST){
-                karel.move();
-                karel.move();
-                karel.pickThing();
-                karel.turnLeft();
-                karel.turnLeft();
-            }else if(!karel.canPickThing()){
-                karel.move();
-                karel.move();
-                break;
-                //Note for last questionhave him turn left 3 times when he's (3,3) and while loop him around all blocks nomrally
             }
         }
         
         
-    }
     
-}
+    
+
