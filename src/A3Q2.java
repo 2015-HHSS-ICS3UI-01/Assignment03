@@ -92,7 +92,7 @@ public class A3Q2 {
         while (karl.frontIsClear()) {
             karl.move();
         }
-
+        karl.turnAround();
 
     }
 }
