@@ -21,7 +21,21 @@ public class A3Q4 {
     public static void main(String[] args) {
         // TODO code application logic here
         City kw = new City();
-        Robot karel = new Robot(kw,3,3, Direction.EAST);
+        Robot karel = new Robot(kw,0,3, Direction.WEST);
         new Wall(kw, 1,1, Direction.WEST);
+        new Wall(kw, 2,1, Direction.WEST);
+        new Wall(kw, 2,1, Direction.SOUTH);
+        new Wall(kw, 2,2, Direction.SOUTH);
+        new Wall(kw, 2,2, Direction.EAST);
+        new Wall(kw, 1,2, Direction.EAST);
+        new Wall(kw, 1,1, Direction.NORTH);
+        new Wall(kw, 1,2, Direction.NORTH);
+        
+        for(int timesTurned= 0; timesTurned < 8; timesTurned = timesTurned + 1){
+            karel.move();
+            karel.move();
+            karel.move();
+            karel.turnLeft();
+        }
     }
 }

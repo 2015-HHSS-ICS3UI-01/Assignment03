@@ -54,26 +54,30 @@ public class A3Q6 {
         new Wall(kw,5,1, Direction.WEST);
         new Wall(kw,5,1, Direction.SOUTH);
         new Wall(kw,5,2, Direction.SOUTH);
+        //This is like pouring water from a mug to another
+        for(int loops = 0; loops < 4; loops++){
+        for(int laps = 0; laps < 4; laps++){
+            // Everytime he moves 3 times forward, it adds 1 to laps
+        for(int moveforward = 0; moveforward < 3; moveforward++){
+            karel.move();
+        }//since laps is < 3, karel turns until loops has 1 then it all resets
+            if (laps < 3){
+                karel.turnLeft();
+            }
         
-        
-        
-       for( int laps = 0; laps < 4; laps++){
-           for(int loops = 0; loops < 4; laps++){
-               for(int  move = 0; move < 3; move++){
-                karel.move();
+        {
+            
+        }
+            
+        }
+    
            }
-              if(laps < 3){
-                  karel.turnLeft();
-              }
-           }
-       
+    }
+}
        
       
        
        
        
-       }
-        
-        
-    }
-}
+       
+ 
