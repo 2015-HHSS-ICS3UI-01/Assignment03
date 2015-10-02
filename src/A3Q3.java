@@ -25,6 +25,7 @@ public class A3Q3 {
         // make robot to live in city
         Robot karel = new Robot(kw, 1, 1, Direction.SOUTH);
         
+        // make walls to create a room for the robot to escape
         new Wall(kw, 0, 0, Direction.NORTH);
         new Wall(kw, 0, 0, Direction.WEST);
         new Wall(kw, 1, 0, Direction.WEST);
@@ -40,22 +41,25 @@ public class A3Q3 {
         new Wall(kw, 0, 2, Direction.NORTH);
         new Wall(kw, 0, 0, Direction.NORTH);
         
-        while(karel.frontIsClear()){
-            karel.turnLeft();
-            karel.move();
-        }
-        
+        // make karel escape the room by checking the whole perimeter of the room
+        // make karel check every unit of wall until there is a break
+        // make karel then travel out of the break and stop right after 
         
         while(true){
+            // make karel first travel to be beside the set of walls
             if(karel.frontIsClear()){
                 karel.move();
+            // make karel turn left to start to move down the wall
             }else{
                 karel.turnLeft();
-                karel.turnLeft();
-                karel.turnLeft();
+                // make karel then move forward if his front is clear
+                // to check if there is a break until he can find one
                 if(karel.frontIsClear()){
                     karel.move();
                     karel.turnLeft();
+                    karel.turnLeft();
+                    karel.turnLeft();
+                    // make karel move forward once and stop if he finds a break
                     if(karel.frontIsClear()){
                         karel.move();
                         break;
