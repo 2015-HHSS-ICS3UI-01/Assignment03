@@ -66,7 +66,6 @@ public class A3Q6 {
         Robot karel = new Robot(kw, 3,3, Direction.SOUTH);
         
         //make karel go around the boxes
-        
         for(int moveAmount = 4; moveAmount > 0; moveAmount --) {
             karel.move();
             karel.move();
