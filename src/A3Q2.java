@@ -51,62 +51,61 @@ public class A3Q2 {
         new Thing (kw, 2, 4);
         new Thing (kw, 3, 4);
         
-        // move through the avenues and streets picking up the things
-        // until we have travelled all avenues and streets 
+        // make karel move through the avenues and streets picking up the things
+        // until karel has travelled all avenues and streets 
         do {
-            // pick up all things at current location
+            // make karel pick up all things at current location
             while ( karel.canPickThing() ) {
                 karel.pickThing();
             }
             
-            // if front is clear for current direction, continue to move
+            // if karel's front is clear for current direction, continue to move
             // in that curent direction
             if(karel.frontIsClear()){
                 karel.move();
                 
-            // if front is not clear we have hit a wall
-            // if our current direction is east then 
-            // we have hit the east wall, turn south
-            // and see if we can move south, if so move south
-            // otherwise we have hit the end of the room
-            // time to return home
+            // if karel's front is not clear we have hit a wall
+            // if karel's current direction is east then 
+            // karel has hit the east wall, turn south and see if we can move south, 
+            // if so move south, otherwise karel has hit the end of the room
+            // make karel go back to start
             }else if(karel.getDirection() == Direction.EAST){
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
                 
-                // check to see if we can move south
+                // make karel check to see if we can move south
                 if(karel.frontIsClear()){
-                    // move south 1 street and then turn to point east
+                    // make karel move south 1 street and then turn to point east
                     karel.move();
                     karel.turnLeft();
                     karel.turnLeft();
                     karel.turnLeft();
                 }
                 
-            // the front is not clear so we hit a wall
-            // if our direction is west then we have hit the
-            // west wall, turn south and see if we can move south
-            // if we can move south then move otherwise we have hit
-            // the end of room, return home. 
+            // the front is not clear so karel has hit a wall
+            // if karel's direction is west then karel has hit the
+            // west wall, turn south and see if karel can move south
+            // if karel can move south then move otherwise karel has hit
+            // the end of room, return to start. 
             }else if(karel.getDirection() == Direction.WEST){
-                // Turn left to poiht direction south
+                // Turn left to point direction south
                 karel.turnLeft();
                 
-                // check to see if we can move south
+                // check to see if karel can move south
                 if(karel.frontIsClear()){
                     karel.move();
                     karel.turnLeft();
                 } 
             }
 
-        // If we are facing south, we have traveled the entire room
+        // if karel is facing south, karel has traveled the entire room
         } while(karel.getDirection() != Direction.SOUTH); 
           
-        // we have move through the entire room, time to return 
-        // to the home position (1,1). Travel west until
+        // make karel move through the entire room, time to return 
+        // to the start position (1,1). Travel west until
         // hit a wall and then north to hit the wall.
-        // We always finish moving through the city pointing 
+        // make karel always finish moving through the city pointing 
         // south, so turn to point West and move until we hit a wall
        
         // point west and move until hit a wall
@@ -117,9 +116,9 @@ public class A3Q2 {
            karel.move();
         }
          
-        // we have hit west wall, 
+        // karel has hit west wall, 
         // point karel north 
-        // and move until we hit a wall.
+        // and move until karel has hit a wall.
         karel.turnLeft();
         karel.turnLeft();
         karel.turnLeft();

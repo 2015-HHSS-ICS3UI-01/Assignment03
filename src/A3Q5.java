@@ -38,7 +38,7 @@ public class A3Q5 {
         new Thing(kw, 0, 0);
         new Thing(kw, 0, 0);
         
-        // make karel pick up things once at a times and put them in the other intersection
+        // make karel pick up things once at a time and put them in the other intersection
         // once karel has moved all 10 things karel must stop
         
         // make a variable for karel to move the things 10 times
