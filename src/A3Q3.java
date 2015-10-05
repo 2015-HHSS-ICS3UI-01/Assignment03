@@ -55,12 +55,13 @@ public class A3Q3 {
             if(karel.frontIsClear()) {
                 karel.move();
                 karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
+            }
+            else if (karel.frontIsClear() == false) {
+                karel.turnLeft();
                 
-            }else if (karel.frontIsClear() == false) {
-                karel.turnLeft();
-                karel.turnLeft();
-                karel.turnLeft();
-            } 
+            }
         }
     }
 }
