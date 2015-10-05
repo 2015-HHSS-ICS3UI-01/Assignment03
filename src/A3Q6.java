@@ -1,6 +1,7 @@
 
 import becker.robots.City;
 import becker.robots.Direction;
+import becker.robots.Robot;
 import becker.robots.Wall;
 
 /*
@@ -56,5 +57,31 @@ public class A3Q6 {
         new Wall(kw, 4,5, Direction.NORTH);
         new Wall(kw, 4,5, Direction.EAST);
         new Wall(kw, 5,5, Direction.EAST);
+        new Wall(kw, 5,5, Direction.SOUTH);
+        new Wall(kw, 5,4, Direction.SOUTH);
+        new Wall(kw, 5,4, Direction.WEST);
+        new Wall(kw, 4,4, Direction.WEST);
+        
+        //make robot
+        Robot karel = new Robot(kw, 3,3, Direction.SOUTH);
+        
+        //make karel go around the boxes
+        
+        for(int moveAmount = 4; moveAmount > 0; moveAmount --) {
+            karel.move();
+            karel.move();
+            karel.move();
+            karel.turnLeft();}
+            
+        for(int moveCount = 1; moveCount > 0; moveCount --) {
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.move();
+            karel.move();
+            karel.move();
+            karel.turnLeft();
+        }
+        
     }
 }
