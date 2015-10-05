@@ -38,31 +38,31 @@ public class A3Q5 {
         new Thing(kw, 0, 0);
         new Thing(kw, 0, 0);
         
-        for(int timesMoved = 10; timesMoved > 0; timesMoved = timesMoved - 1){
+        // make karel pick up things once at a times and put them in the other intersection
+        // once karel has moved all 10 things karel must stop
+        
+        // make a variable for karel to move the things 10 times
+        // make karel move if he has moved less then ten times
+        // make the varable be increased by 1 every time he picks up and puts down a thing
+        for(int thingsToMove = 10; thingsToMove > 0; thingsToMove = thingsToMove - 1){
+            // check to if thing to pick up, if yes pick it up and put
             if(karel.countThingsInBackpack() == 0 && karel.canPickThing()){
                 karel.pickThing();
                 karel.move();
                 karel.putThing();
-                karel.turnLeft();
-                karel.turnLeft();
-                karel.move();
-                karel.turnLeft();
-                karel.turnLeft();
-            }
-        }
-        while(karel.countThingsInBackpack() == 0){
-            if(karel.canPickThing()){
-                karel.pickThing();
-                karel.move();
-                karel.putThing();       
-                karel.turnLeft();
-                karel.turnLeft();
-                karel.move();
-                karel.turnLeft();
-                karel.turnLeft();
-            }else {
-                karel.move();
-                break;
+                                
+                // if there are more things to move the current thing
+                // have karel come back to the original pile of things otherwise he done
+                if( thingsToMove > 1 ){
+                    // make karel flip around
+                    karel.turnLeft();
+                    karel.turnLeft();
+                    // make karel move back on to the original pile
+                    karel.move();
+                    // make karel flip around to face the new pile of things
+                    karel.turnLeft();
+                    karel.turnLeft();
+                }
             }
         }
     }

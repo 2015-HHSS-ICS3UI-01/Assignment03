@@ -45,30 +45,37 @@ public class A3Q3 {
         // make karel check every unit of wall until there is a break
         // make karel then travel out of the break and stop right after 
         
-        while(true){
-            // make karel first travel to be beside the set of walls
-            if(karel.frontIsClear()){
+        // make variable for karel to know if he is out of the room
+        boolean foundExit = false;
+        
+        // move karel forward until he hits a wall 
+        while( karel.frontIsClear() ){
+            karel.move();
+        }
+           
+        // make karel find the exit if the variable is false
+        while( !foundExit ){
+            // make karel then move forward if his front is clear
+            // to check if there is a break until he can find one
+            if( karel.frontIsClear() ){
+                // move along the wall
                 karel.move();
-            // make karel turn left to start to move down the wall
-            }else{
+
+                // turn to face the wall to see if opening in wall
                 karel.turnLeft();
-                // make karel then move forward if his front is clear
-                // to check if there is a break until he can find one
+                karel.turnLeft();
+                karel.turnLeft();
+
+                // if clear than there is a break in the wall
+                // move forward and out doorway and stop 
                 if(karel.frontIsClear()){
                     karel.move();
-                    karel.turnLeft();
-                    karel.turnLeft();
-                    karel.turnLeft();
-                    // make karel move forward once and stop if he finds a break
-                    if(karel.frontIsClear()){
-                        karel.move();
-                        break;
-                    }
+                    foundExit = true;
                 }
+            } else {
+                // hit a wall, turn left to travel along the wall
+                karel.turnLeft();
             }
-            
-            // to shorten one while loop to get him to the walls 
-            // and then another to get him to check till there is a break
         }
     }
 }

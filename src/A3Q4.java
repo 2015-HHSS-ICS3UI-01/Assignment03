@@ -42,7 +42,7 @@ public class A3Q4 {
         // make a variable for the 8 sides karel needs to repeat
         // every time it moves along a side the variable will be subtracted by one
         // therefore at the end karel will stop where he started
-        for(int moveSide = 8; moveSide != 0; moveSide = moveSide - 1){
+        for(int moveSide = 0; moveSide != 8; moveSide = moveSide + 1){
             // move karel forward twice until he is at the corner of the building
             karel.move();
             karel.move();
