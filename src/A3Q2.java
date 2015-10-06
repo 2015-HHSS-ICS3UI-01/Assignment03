@@ -55,14 +55,24 @@ public class A3Q2 {
                 karel.pickThing();
             } else if(karel.frontIsClear()) {
                 karel.move();
+            } else if(karel.getAvenue() == 1 && karel.frontIsClear() == false) {
+                karel.turnLeft();
+                karel.move();
+                karel.turnLeft();
             } else if(karel.frontIsClear() == false) {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
+                { if(karel.frontIsClear() == false)
+                        break;}
+                karel.move();
+                karel.turnLeft();
+                karel.turnLeft();
                 karel.turnLeft();
             } 
         
-        
-        
-         //make karel find street 1
-        while (true)
+        //make karel find street 1
+        while (true) {
             if (karel.getDirection() != Direction.NORTH) {
                 karel.turnLeft();
             } else if (karel.getStreet() > 1) {
@@ -70,7 +80,7 @@ public class A3Q2 {
             } else if (karel.getStreet() == 1) {
                 break;
             }
-        
+        }
         karel.turnLeft();
 
         //make karel find avenue 1
@@ -79,6 +89,10 @@ public class A3Q2 {
                 karel.move();
             } else if (karel.getAvenue() == 1) {
                 break;
+            } 
+            if(karel.getAvenue() == 1 && karel.getStreet() == 1) {
+                karel.turnLeft();
+                karel.turnLeft();
             }
         }
     }
