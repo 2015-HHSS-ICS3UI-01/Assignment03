@@ -57,11 +57,13 @@ public class A3Q3 {
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
+                {if(karel.frontIsClear())
+                    break;}
             }
             else if (karel.frontIsClear() == false) {
                 karel.turnLeft();
-                
             }
         }
+            karel.move();
     }
 }
