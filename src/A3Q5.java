@@ -8,7 +8,6 @@ import becker.robots.Thing;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author watsk8668
@@ -21,38 +20,38 @@ public class A3Q5 {
     public static void main(String[] args) {
         //make city
         City kw = new City();
-        
+
         //make robot
-        Robot karel = new Robot(kw, 0,0, Direction.EAST);
-        
+        Robot karel = new Robot(kw, 0, 0, Direction.EAST);
+
         //make things
-        new Thing(kw, 0,1);
-        new Thing(kw, 0,1);
-        new Thing(kw, 0,1);
-        new Thing(kw, 0,1);
-        new Thing(kw, 0,1);
-        new Thing(kw, 0,1);
-        new Thing(kw, 0,1);
-        new Thing(kw, 0,1);
-        new Thing(kw, 0,1);
-        new Thing(kw, 0,1);
-        
+        new Thing(kw, 0, 1);
+        new Thing(kw, 0, 1);
+        new Thing(kw, 0, 1);
+        new Thing(kw, 0, 1);
+        new Thing(kw, 0, 1);
+        new Thing(kw, 0, 1);
+        new Thing(kw, 0, 1);
+        new Thing(kw, 0, 1);
+        new Thing(kw, 0, 1);
+        new Thing(kw, 0, 1);
+
         //make karel move 
         karel.move();
-        
-        //make karel pick them up and move them one at a time
+
+        //make karel pick the things up and move them one at a time
         int moveAmount = 10;
         while (moveAmount > 0) {
-                moveAmount--;
-                karel.pickThing();
-                karel.move();
-                karel.putThing();
-                karel.turnLeft();
-                karel.turnLeft();
-                karel.move();
-                karel.turnLeft();
-                karel.turnLeft();
-            } 
+            moveAmount--;
+            karel.pickThing();
+            karel.move();
+            karel.putThing();
+            karel.turnLeft();
+            karel.turnLeft();
+            karel.move();
+            karel.turnLeft();
+            karel.turnLeft();
+        }
         karel.move();
     }
 }

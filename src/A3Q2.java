@@ -50,27 +50,31 @@ public class A3Q2 {
         new Thing(kw, 3, 4);
 
         //make karel pick up the trash
-        while (true)
-            if(karel.canPickThing()) {
+        while (true) {
+            if (karel.canPickThing()) {
                 karel.pickThing();
-            } else if(karel.frontIsClear()) {
+            } else if (karel.frontIsClear()) {
                 karel.move();
-            } else if(karel.getAvenue() == 1 && karel.frontIsClear() == false) {
+            } else if (karel.getAvenue() == 1 && karel.frontIsClear() == false) {
                 karel.turnLeft();
-                karel.move();
-                karel.turnLeft();
-            } else if(karel.frontIsClear() == false) {
-                karel.turnLeft();
-                karel.turnLeft();
-                karel.turnLeft();
-                { if(karel.frontIsClear() == false)
-                        break;}
                 karel.move();
                 karel.turnLeft();
+            } else if (karel.frontIsClear() == false) {
                 karel.turnLeft();
                 karel.turnLeft();
-            } 
-        
+                karel.turnLeft();
+                {
+                    if (karel.frontIsClear() == false) {
+                        break;
+                    }
+                }
+                karel.move();
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
+            }
+        }
+
         //make karel find street 1
         while (true) {
             if (karel.getDirection() != Direction.NORTH) {
@@ -89,8 +93,8 @@ public class A3Q2 {
                 karel.move();
             } else if (karel.getAvenue() == 1) {
                 break;
-            } 
-            if(karel.getAvenue() == 1 && karel.getStreet() == 1) {
+            }
+            if (karel.getAvenue() == 1 && karel.getStreet() == 1) {
                 karel.turnLeft();
                 karel.turnLeft();
             }

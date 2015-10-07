@@ -34,7 +34,7 @@ public class A3Q4 {
         //make robot
         Robot karel = new Robot(kw, 0, 2, Direction.WEST);
 
-        //make karel go around the square
+        //make karel go around the square 2 times
         for (int moveAmount = 8; moveAmount > 0; moveAmount--) {
             karel.move();
             karel.move();

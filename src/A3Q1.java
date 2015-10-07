@@ -42,25 +42,6 @@ public class A3Q1 {
                 karel.move();
             }
         }
-        //make another robot
-        Robot tina = new Robot(kw, 3, 0, Direction.EAST);
-
-        //make wall
-        new Wall(kw, 3, 4, Direction.EAST);
-
-        //make things
-        new Thing(kw, 3, 5);
-
-        //make tina stop at the first thing or wall
-        while (true) {
-            if (tina.canPickThing()) {
-                break;
-            } else if (tina.frontIsClear() == false) {
-                break;
-            } else if (tina.frontIsClear()) {
-                tina.move();
-            }
-        }
 
     }
 }
