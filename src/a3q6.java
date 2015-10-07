@@ -63,13 +63,20 @@ public class a3q6 {
         new Wall(kw, 5, 1, Direction.SOUTH);
         new Wall(kw, 5, 2, Direction.SOUTH);
 
-      int side = 0;
-      
-      while(side < 3){
-        lali.move();
-        side++;
+         
+        for(int loop = 4;loop > 0;loop--){   
+            
+         for(int moveamount=4;moveamount>0;moveamount--){
+             
+          lali.move();
+          lali.move();
+          lali.move();
+          ()
+          lali.turnLeft();
+         }
+         
         
-    }
+        } 
         
      
              
