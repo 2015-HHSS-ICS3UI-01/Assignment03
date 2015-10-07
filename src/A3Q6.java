@@ -83,7 +83,7 @@ public class A3Q6 {
                 
                 // turn left to face next side of box for the first
                 // 3 sides of the box, but don't turn left on last side
-                // to avoid karel having to spin to face next box. 
+                // to avoid karel having to spin to face next box
                 if ( boxSide < 3 ) {
                     karel.turnLeft();
                 }
