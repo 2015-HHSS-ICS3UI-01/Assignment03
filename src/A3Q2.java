@@ -51,82 +51,62 @@ public class A3Q2 {
         new Thing(NYC, 2, 3);
         new Thing(NYC, 3, 1);
         new Thing(NYC, 3, 3);
+        new Thing(NYC, 3, 3);
 
 
         //karel starts picking things in first street
-
-
-        while (karel.frontIsClear()) {
-            karel.move();
-
+        while (true) {
             if (karel.canPickThing()) {
                 karel.pickThing();
+            } else if (karel.frontIsClear()) {
+                karel.move();
+            } else if (!karel.frontIsClear() && (karel.getDirection() == Direction.EAST)) {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
             }
-        }
-        //karel makes a transition to second street 
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.move();
-        karel.turnLeft();
-        karel.turnLeft();
-        karel.turnLeft();
 
-        //karel starts picking things on second street      
-        while (karel.frontIsClear()) {
-            karel.pickThing();
-            karel.move();
-
-        }
-        //karel makes a transition to third street 
-        karel.turnLeft();
-        karel.move();
-        karel.turnLeft();
-
-        //karel starts picking things on third street 
-        while (karel.frontIsClear()) {
-            if (karel.canPickThing()) {
-                karel.pickThing();
+            //After he clears first road he turns 
+            if (karel.getDirection() == Direction.SOUTH && (karel.frontIsClear())) {
                 karel.move();
-            } else {
+                karel.turnLeft();
+                karel.turnLeft();
+                karel.turnLeft();
+
+                //After he clears second road he turns
+            } else if (karel.getDirection() == Direction.WEST && (!karel.frontIsClear())) {
+                karel.turnLeft();
                 karel.move();
+                karel.turnLeft();
+
+                //After he clears third road he turns
+            } else if (karel.getDirection() == Direction.SOUTH && (!karel.frontIsClear())) {
+                karel.turnLeft();
+                karel.turnLeft();
+                break;
             }
 
         }
-        karel.pickThing();
+        while (true) {
+            if (karel.getStreet() != 1) {
+                karel.move();
 
-        //karel travels back to origin(1,1)
-        while (karel.getDirection() != Direction.NORTH) {
-            karel.turnLeft();
-        }
-        while (karel.getStreet() != 1) {
-            karel.move();
-        }
+            }  else if(!karel.frontIsClear()) {
+                karel.turnLeft(); 
+            }
+            
+            if(karel.getAvenue() != 1){ 
+                karel.move(); 
+            }  
+            
+                
+           
 
-        while (karel.getDirection() != Direction.WEST) {
-            karel.turnLeft();
-        }
-        while (karel.getAvenue() != 1) {
-            karel.move();
-        }
-
-        karel.turnLeft();
-        karel.turnLeft();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        } 
+        
+        
+        
+        
     }
 }
