@@ -48,23 +48,23 @@ public class a3q3 {
        new Wall(kw,1,2,Direction.NORTH);
        new Wall(kw,1,3,Direction.NORTH);
        new Wall(kw,1,4,Direction.NORTH);
-       
+       //make robot find wall
        lali.turnLeft();
        while(true){
-           
+           //robot check if the front is clear 
            lali.move();
            if(lali.frontIsClear()){
                lali.turnLeft();
                
               
-               
+               //is the front is not clear the robot turns back arond 
                
            } if(!lali.frontIsClear()){
                    lali.turnLeft();
                    lali.turnLeft();
                    lali.turnLeft();
        
-           
+            //checking avenue and street
            }  if(lali.getAvenue()== 5 && lali.getStreet()==3){
                break;
            }

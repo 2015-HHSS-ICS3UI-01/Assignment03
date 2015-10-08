@@ -48,7 +48,8 @@ public class a3q4 {
         
        
         
-                
+              //robot moves a lap each time,addging one lap untill he reaches 
+        //8 laps 
          while(lap!=8){
          
          lali.move();

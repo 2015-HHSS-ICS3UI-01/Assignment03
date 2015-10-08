@@ -59,11 +59,13 @@ public class a3q2 {
 
         new Thing(kw, 3, 1);
         new Thing(kw, 3, 4);
-
+        //start of loop
         while (true) {
+            //if robot can pcikthing he will picthing 
             if(lali.canPickThing()){
                 lali.pickThing();
             }
+            //robot moves
             while (lali.frontIsClear()) {
                 lali.move();
                 if (lali.canPickThing()) {
@@ -71,7 +73,7 @@ public class a3q2 {
                 }
             }
 
-
+           //return back 
             lali.turnLeft();
             lali.turnLeft();
             while (lali.frontIsClear()) {
@@ -90,7 +92,7 @@ public class a3q2 {
             lali.turnLeft();
 
         
-       
+       //moves back to start 
     }    while(lali.getStreet()!=1){
              lali.move();
          } lali.turnLeft();

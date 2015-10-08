@@ -63,26 +63,32 @@ public class a3q6 {
         new Wall(kw, 5, 1, Direction.SOUTH);
         new Wall(kw, 5, 2, Direction.SOUTH);
 
-         
+         //repeat the variable moveamount 4 times 
         for(int loop = 4;loop > 0;loop--){   
             
+            
+            //make robot repeat all 4 sides of wall 
          for(int moveamount=4;moveamount>0;moveamount--){
              
           lali.move();
           lali.move();
           lali.move();
-          ()
+          if(moveamount!=1){
+             
           lali.turnLeft();
          }
          
         
         } 
+        }
+    }
+}
         
      
              
         
        
        
-    }
-}
+    
+
 
