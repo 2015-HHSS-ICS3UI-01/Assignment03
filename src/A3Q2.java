@@ -14,22 +14,15 @@ import becker.robots.Wall;
  *
  * @author bettk6516
  */
-public class A1Q2v2 {
+public class A3Q2 {
 
     /**
      * @param args the command line arguments
      */
+    @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
         // TODO code application logic here
-    
-        
-        
-        
-        
-        
-        
-        // skiped
-      City jw=new City();
+    City jw=new City();
     Robot rob=new Robot(jw,1,1,Direction.EAST);
     new Wall(jw,1,1,Direction.WEST);
     new Wall(jw,1,1,Direction.NORTH);
@@ -54,33 +47,54 @@ public class A1Q2v2 {
     new Thing(jw,3,4);
     new Thing(jw,3,1);
     //Things!!!
-   rob.turnLeft();
-   
-  
-   while(rob.frontIsClear()){
-       rob.move();
-   if(rob.canPickThing()){
-        rob.pickThing();
+    
+    while(true){
+     while(rob.frontIsClear()){
+           rob.turnLeft();
+              if(!rob.frontIsClear()){
+                  rob.turnLeft();
+                  rob.turnLeft();
+                  rob.turnLeft();
+              }        
+            if (rob.frontIsClear()){
+         
+                rob.move();
+          if(rob.canPickThing()){
+              rob.pickThing();
+          }
+          
+          
         }
-   while (!rob.frontIsClear()){
-    rob.turnLeft();
-   
-   }
-   
-   }
-  
-       
+    if(!rob.frontIsClear()){
+        rob.turnLeft();
+        if(rob.frontIsClear()){
+            rob.move();
+        }
+    }
+       }
     
-      
         
-      
-       
-           
         
-            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
     
+        
+     
     
     
     }
+    
+}
 }
