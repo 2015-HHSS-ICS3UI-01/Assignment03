@@ -30,7 +30,7 @@ public class A3Q4 {
         new Wall(kw, 1,2, Direction.EAST);
         new Wall(kw, 1,1, Direction.NORTH);
         new Wall(kw, 1,2, Direction.NORTH);
-        
+        // Karel moves around twice
         for(int timesTurned= 0; timesTurned < 8; timesTurned = timesTurned + 1){
             karel.move();
             karel.move();

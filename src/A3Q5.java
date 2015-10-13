@@ -33,7 +33,7 @@ public class A3Q5 {
         new Thing(kw, 1, 1);
         new Thing(kw, 1, 1);
         int Backpack = 0;
-        //named variable Backpack = 0
+        //Karel keeps doing same procedure (placing things) and adds 1 to backpack
         while (Backpack < 10) {
             karel.pickThing();
             karel.move();
@@ -47,7 +47,7 @@ public class A3Q5 {
             karel.turnLeft();
             karel.turnLeft();
             Backpack++;
-            //once his backpack has 10, he breaks out of loop and finishes off by stepping on his lego
+            //once his backpack has 10, he breaks out of loop and finishes off 
             if (Backpack > 9) {
                 karel.move();
                 karel.move();

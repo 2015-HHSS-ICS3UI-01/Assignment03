@@ -36,7 +36,10 @@ public class A3Q3 {
         new Wall(kw, 1, 3, Direction.NORTH);
         new Wall(kw, 1, 4, Direction.NORTH);
 
+
+
         while (true) {
+            // Karel turns north! and moves until he hits a wall
             if (karel.getDirection() != Direction.NORTH) {
                 karel.turnLeft();
 
@@ -47,21 +50,15 @@ public class A3Q3 {
                 break;
             }
         }
-
-
+        //Karel keeps checking for an exit until he finds one he stops
         while (true) {
-
-
-
-
             if (!karel.frontIsClear()) {
                 karel.turnLeft();
                 karel.move();
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
-
-
+                
             } else {
                 karel.move();
                 break;

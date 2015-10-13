@@ -43,12 +43,14 @@ public class A3Q2 {
         new Thing(kw, 3, 1);
         new Thing(kw, 3, 4);
 
+
         while (true) {
+            //Picks up and moves when he can
             if (karel.canPickThing()) {
                 karel.pickThing();
             } else if (karel.frontIsClear()) {
                 karel.move();
-
+                // everytime he finishes an even row he turns
             } else if (!karel.frontIsClear() && (karel.getDirection() == Direction.EAST)) {
                 karel.turnLeft();
                 karel.turnLeft();
@@ -84,8 +86,8 @@ public class A3Q2 {
                 karel.turnLeft();
             } else if (karel.getAvenue() > 1) {
                 karel.move();
-                        
-                    }
+
+            }
 
         }
 
