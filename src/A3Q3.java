@@ -21,56 +21,54 @@ public class A3Q3 {
     public static void main(String[] args) {
         //create city, robot and environment
         City thomas = new City();
-        
-        Robot tom = new Robot(thomas, 1,2, Direction.WEST);
-        
-                new Wall(thomas,1,1, Direction.NORTH);
-                
-                
-        new Wall(thomas,1,1, Direction.WEST);
-        new Wall(thomas,3,1, Direction.WEST);
-        new Wall(thomas,4,1, Direction.WEST);
-        new Wall(thomas,4,1, Direction.SOUTH);
-        new Wall(thomas,4,2, Direction.SOUTH);
-        new Wall(thomas,4,3, Direction.SOUTH);
-        new Wall(thomas,4,3, Direction.EAST);
-        new Wall(thomas,3,3, Direction.EAST);
-        new Wall(thomas,2,3, Direction.EAST);
-        new Wall(thomas,1,3, Direction.EAST);
-        new Wall(thomas,1,3, Direction.NORTH);
-        new Wall(thomas,1,2, Direction.NORTH);
-        
+
+        Robot tom = new Robot(thomas, 1, 2, Direction.WEST);
+
+        new Wall(thomas, 1, 1, Direction.NORTH);
+
+
+        new Wall(thomas, 1, 1, Direction.WEST);
+        new Wall(thomas, 3, 1, Direction.WEST);
+        new Wall(thomas, 4, 1, Direction.WEST);
+        new Wall(thomas, 4, 1, Direction.SOUTH);
+        new Wall(thomas, 4, 2, Direction.SOUTH);
+        new Wall(thomas, 4, 3, Direction.SOUTH);
+        new Wall(thomas, 4, 3, Direction.EAST);
+        new Wall(thomas, 3, 3, Direction.EAST);
+        new Wall(thomas, 2, 3, Direction.EAST);
+        new Wall(thomas, 1, 3, Direction.EAST);
+        new Wall(thomas, 1, 3, Direction.NORTH);
+        new Wall(thomas, 1, 2, Direction.NORTH);
+
 //get to edge of room
-        while(tom.frontIsClear())
-        {
+        while (tom.frontIsClear()) {
             tom.move();
         }
 //turn left
         tom.turnLeft();
-        
+
 //a right-side follower:
 
 //loop until hole is found
-        while(true)
-        {
+        while (true) {
 //if front is clear move forward and turn right and check for hole
-        if(tom.frontIsClear()){
-            tom.move();
-            tom.turnLeft();
-            tom.turnLeft();
-            tom.turnLeft();
-            if(tom.frontIsClear()){
+            if (tom.frontIsClear()) {
                 tom.move();
+                tom.turnLeft();
+                tom.turnLeft();
+                tom.turnLeft();
+                if (tom.frontIsClear()) {
+                    tom.move();
 //if hole is found, 'break; (end program)
-                break;
+                    break;
 //if hole is not found turn left and continue
-            }else{
+                } else {
+                    tom.turnLeft();
+                }
+//if corner is reached, turn left and continue
+            } else {
                 tom.turnLeft();
             }
-//if corner is reached, turn left and continue
-        }else{
-            tom.turnLeft();
-        }
         }
     }
 }

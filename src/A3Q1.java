@@ -20,7 +20,8 @@ public class A3Q1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        // create city, robot, walls and things
         
         City thomas = new City();
         
@@ -30,10 +31,11 @@ public class A3Q1 {
         new Thing(thomas, 1,4);
         new Wall(thomas,1,5, Direction.WEST);
         
-
+//move forward if front is clear but stop when thing is found
         while(tom.frontIsClear())
         {
             tom.move();
+            //if tom can pick thing, thing is found, so end loop
         if(tom.canPickThing())
         {
             break;
