@@ -1,6 +1,8 @@
 
 import becker.robots.City;
 import becker.robots.Direction;
+import becker.robots.Robot;
+import becker.robots.Thing;
 import becker.robots.Wall;
 
 /*
@@ -21,16 +23,38 @@ public class A3Q5 {
         // make city
         City eep = new City();
         
-        //boxes
-        new Wall (eep, 1, 1, Direction.EAST);
-        new Wall (eep, 1, 1, Direction.EAST);
-        new Wall (eep, 1, 1, Direction.EAST);
-        new Wall (eep, 1, 1, Direction.EAST);
-        new Wall (eep, 1, 1, Direction.EAST);
-        new Wall (eep, 1, 1, Direction.EAST);
-        new Wall (eep, 1, 1, Direction.EAST);
-        new Wall (eep, 1, 1, Direction.EAST);
+        //make things
+        new Thing (eep, 1, 1);
+        new Thing (eep, 1, 1);
+        new Thing (eep, 1, 1);
+        new Thing (eep, 1, 1);
+        new Thing (eep, 1, 1);
+        new Thing (eep, 1, 1);
+        new Thing (eep, 1, 1);
+        new Thing (eep, 1, 1);
+        new Thing (eep, 1, 1);
+        new Thing (eep, 1, 1);
         
-        }
+        //make robot
+        Robot jimbo = new Robot (eep, 1, 1, Direction.EAST);
+        
+        for (int things = 0; things < 10; things = things + 1){
+            jimbo.pickThing();
+            jimbo.move();
+            jimbo.putThing();
+            jimbo.turnLeft();
+            jimbo.turnLeft();
+            
+            
+            jimbo.move();
+            jimbo.turnLeft();
+            jimbo.turnLeft();
+            
+            
+            
+        }jimbo.move();
     }
+    
 }
+    
+
